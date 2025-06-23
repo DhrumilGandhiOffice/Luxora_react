@@ -1,0 +1,93 @@
+@use '../../assets/styles/index' as *;
+
+.product-grid {
+    overflow: hidden;
+    padding-top: 106px;
+
+    .grid-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+
+        .col {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 40px;
+            width: 100%;
+
+            .grid-tile {
+                position: relative;
+
+                .grid-img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+
+                    &.r2c1 {
+                        max-width: 436px;
+                        max-height: 720px;
+                    }
+
+                    &.r3c1 {
+                        max-width: 438px;
+                        max-height: 467px;
+                    }
+
+                    &.hover {
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        opacity: 0;
+                    }
+
+                    &:hover {
+                        &.hover {
+                            opacity: 1;
+                        }
+                        &.normal {
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        @media (max-width: $breakpoint-mobile) { 
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            .col {
+                align-items: center;
+                .grid-tile {
+                    max-width: 333px;
+                    max-height: 395px;
+                    position: unset;
+                    .grid-img {
+                        width: 100%;
+                        height: 100%;
+                        object-position: top;
+                        object-fit: cover;
+
+                        &.normal {
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                        &.hover {
+                            position: unset;
+                        }
+                    }
+                }
+            }
+
+        } 
+    }
+}
