@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './latestJournal.scss'
 
 const LatestJournal = () => {
@@ -34,14 +35,16 @@ const LatestJournal = () => {
                 <div className="journal-tiles">
                     {journalData.tiles.map((tile, index) => (
                         <div className='journal-tile' key={index}>
-                            <div className='tile-wrap'>
-                                <div className='tile-image'>
-                                    <img src={tile.image} alt={tile.alt} />
+                            <Link to='/blog'>
+                                <div className='tile-wrap'>
+                                    <div className='tile-image'>
+                                        <img src={tile.image} alt={tile.alt} />
+                                    </div>
+                                    <div className='tile-text'>
+                                        <h4 className='h6-m'>{tile.title}</h4>
+                                    </div>
                                 </div>
-                                <div className='tile-text'>
-                                    <h4 className='h6-m'>{tile.title}</h4>
-                                </div>
-                            </div>
+                            </Link>
                         </div>
                     ))}
                 </div>

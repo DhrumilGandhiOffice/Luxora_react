@@ -1,34 +1,20 @@
-import { useState } from 'react'
-import './assets/styles/main.scss'
-import './assets/styles/_typography.scss'
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import Hero from './components/Hero/Hero';
-import BrandCarousel from './components/BrandCarousel/BrandCarousel';
-import MostFamous from './components/MostFamous/MostFamous';
-import About from './components/AboutLuxora/About';
-import Video from './components/Video/Video';
-import Category from './components/Category/Category';
-import LatestJournal from './components/LatestJournal/LatestJournal';
-import Blog from './components/Blog/Blog';
 
+import './assets/styles/main.scss'
+import Home from './pages/Home';
+import Layout from './Layout';
+import Blog from './pages/Blog';
+import { Routes, Route } from 'react-router-dom';
 
 
 function App() {
   return (
     <>
-      <Header />
-      <div className='main-container'>
-        <Hero />
-        <BrandCarousel />
-        <MostFamous />
-        <About />
-        <Video />
-        <Category />
-        <LatestJournal />
-        {/* <Blog /> */}
-      </div>
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+        </Route>
+      </Routes>
     </>
   )
 }

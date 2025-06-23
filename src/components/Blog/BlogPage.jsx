@@ -4,7 +4,7 @@ import LatestNews from './LatestNews';
 
 
 
-const Blog = () => {
+const BlogPage = () => {
     const latestNews = [
         {
             "imageData": {
@@ -165,37 +165,15 @@ const Blog = () => {
 
                             <div className="latest-news-tiles fade-in">
                                 {latestNews.map((news, index) => (
-                                    <LatestNews imageData={news.imageData} date={news.date} title={news.title} key={index} total={latestNews.length}/>
+                                    <LatestNews
+                                        key={index}
+                                        imageData={news.imageData}
+                                        date={news.date}
+                                        title={news.title}
+                                        index={index}
+                                        total={latestNews.length}
+                                    />
                                 ))}
-                                {/* <div className="latest-news-tile">
-                                    <div className="latest-news-img">
-                                        <img src="./assets/images/blog/news-1.jpg" alt="news-1" />
-                                    </div>
-                                    <div className="latest-news-info">
-                                        <span className="date text-s">January 25, 2025</span>
-                                        <h5>The Power of Pink: Celebrity Style Inspo from Our Favorite Icons lorem</h5>
-                                    </div>
-                                </div>
-                                <div className="separator"></div>
-                                <div className="latest-news-tile">
-                                    <div className="latest-news-img">
-                                        <img src="./assets/images/blog/news-2.jpg" alt="news-1" />
-                                    </div>
-                                    <div className="latest-news-info">
-                                        <span className="date text-s">January 25, 2025</span>
-                                        <h5>The Power of Pink: Celebrity Style Inspo from Our Favorite Icons lorem</h5>
-                                    </div>
-                                </div>
-                                <div className="separator"></div>
-                                <div className="latest-news-tile">
-                                    <div className="latest-news-img">
-                                        <img src="./assets/images/blog/news-3.jpg" alt="news-1" />
-                                    </div>
-                                    <div className="latest-news-info">
-                                        <span className="date text-s">January 25, 2025</span>
-                                        <h5>The Power of Pink: Celebrity Style Inspo from Our Favorite Icons lorem</h5>
-                                    </div>
-                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -205,4 +183,4 @@ const Blog = () => {
     )
 }
 
-export default Blog
+export default BlogPage

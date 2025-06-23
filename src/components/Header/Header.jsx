@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './header.scss';
 import MenuLink from './MenuLink';
+import { Link } from 'react-router-dom';
 
 
 function Header() {
@@ -28,10 +29,9 @@ function Header() {
                         <img src="/assets/svg/humburger.svg" className="menu-icon" alt="Menu" />
                         <img src="/assets/svg/close.svg" className="close-icon" alt="Close Menu" />
                     </button>
-
-                    <a href="index.html" className="logo">
+                    <Link to='/'>
                         <img src="/assets/svg/logo_black.svg" alt="Luxora" />
-                    </a>
+                    </Link>
                     <MenuLink />
                     <div className="nav-icons">
 
